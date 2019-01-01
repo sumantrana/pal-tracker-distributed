@@ -32,7 +32,7 @@ namespace IntegrationTest
                 .Port(8881)
                 .Database("tracker_allocations_dotnet_test")
                 .SetEnvironmentVariable("REGISTRATION_SERVER_ENDPOINT", _registrationServer.Url())
-                .SetEnvironmentVariable("EUREKA__CLIENT__SHOULDREGISTERWITHEUREKA", "false")
+                .SetEnvironmentVariable("EUREKA__CLIENT__SHOULDFETCHREGISTRY", "false")
                 .Build();
 
             _backlogServer = TestAppServerBuilder()
@@ -40,7 +40,7 @@ namespace IntegrationTest
                 .Port(8882)
                 .Database("tracker_backlog_dotnet_test")
                 .SetEnvironmentVariable("REGISTRATION_SERVER_ENDPOINT", _registrationServer.Url())
-                .SetEnvironmentVariable("EUREKA__CLIENT__SHOULDREGISTERWITHEUREKA", "false")
+                .SetEnvironmentVariable("EUREKA__CLIENT__SHOULDFETCHREGISTRY", "false")
                 .Build();
 
             _timesheetsServer = TestAppServerBuilder()
@@ -48,7 +48,7 @@ namespace IntegrationTest
                 .Port(8884)
                 .Database("tracker_timesheets_dotnet_test")
                 .SetEnvironmentVariable("REGISTRATION_SERVER_ENDPOINT", _registrationServer.Url())
-                .SetEnvironmentVariable("EUREKA__CLIENT__SHOULDREGISTERWITHEUREKA", "false")
+                .SetEnvironmentVariable("EUREKA__CLIENT__SHOULDFETCHREGISTRY", "false")
                 .Build();
         }
 
